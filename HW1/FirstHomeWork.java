@@ -1,17 +1,17 @@
-package OOP;
-import java.util.Arrays;
+package HW1;
+
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.io.BufferedReader;  
 import java.io.FileReader;  
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
 
 public class FirstHomeWork {
     
-    static String int_to_string(int tot_time) {
+    static String int_to_time(int tot_time) {
         int hours = tot_time / 3600;
         tot_time %= 3600;
         int minutes = tot_time / 60;
@@ -34,7 +34,7 @@ public class FirstHomeWork {
         return Integer.parseInt(time[0].trim()) * 3600 + Integer.parseInt(time[1].trim()) * 60 + Integer.parseInt(time[2].trim());
     }
     public static void main(String[] args) {
-        String path = "attendance.csv";
+        String path = "HW1\\attendance.csv";
         String row = "";
         HashMap <String, Integer> total_time = new HashMap<String, Integer>();
         try{
@@ -64,7 +64,7 @@ public class FirstHomeWork {
             for(String i : names) {
                 csvWriter.append(i);
                 csvWriter.append(',');
-                csvWriter.append(" " + int_to_string(total_time.get(i)));
+                csvWriter.append(" " + int_to_time(total_time.get(i)));
                 csvWriter.append("\n");
             }
             csvWriter.flush();
