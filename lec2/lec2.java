@@ -59,15 +59,6 @@ class House{
 	static void showTotalNumberOfHouses() {
 		System.out.println("Total amount of houses is: " + cnt);
 	}
-
-	// TASK-1: Add at least one more instance data field;
-
-	// TASK-2: Add at least one more instance method;	
-
-	// TASK-3: Create a method showTotalNumberOfHouses();
-
-	// TASK-4: Generate Addresses (Street numbers) automatically (Ex: Abylai khan 1, Abylai khan 2, etc.).
-
 }
 
 public class lec2{
@@ -85,11 +76,7 @@ public class lec2{
 		h2.showArea();
 
 		House.streetName = "Abylai khan";
-		// System.out.println(h1.streetName);
-		// System.out.println(h2.streetName);
-		// System.out.println(House.streetName);
 
-		// House.showArea();
 		House.showStreetName();
 
 		h1.showAddress();
