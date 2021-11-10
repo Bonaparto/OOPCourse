@@ -7,7 +7,11 @@ public class MyFileProcessor {
         ReadProcessor read = new ReadProcessor();
         WriteProcessor write = new WriteProcessor();
         read.execute();
-        write.execute();
+        try{
+            write.execute();
+        } catch(MyIllegalStateException ex) {
+            System.out.println("Some exception.");
+        }
     }
     public void execute() throws MyIllegalStateException{
         throw new MyIllegalStateException("This is my illegal exception.");
