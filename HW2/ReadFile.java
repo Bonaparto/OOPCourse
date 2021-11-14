@@ -15,7 +15,7 @@ public class ReadFile {
             }
             scan.close();
         } catch(FileNotFoundException ex) {
-            System.out.println("File not found.");
+            System.out.println("File was not opened.");
         }
     }
 }

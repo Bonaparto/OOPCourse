@@ -6,8 +6,8 @@ public class MyFileProcessor {
     public static void main(String[] args) {
         ReadProcessor read = new ReadProcessor();
         WriteProcessor write = new WriteProcessor();
-        read.execute();
         try{
+            read.execute();
             write.execute();
         } catch(MyIllegalStateException ex) {
             System.out.println("Some exception.");
