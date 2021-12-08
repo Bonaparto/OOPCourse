@@ -1,5 +1,3 @@
-package HW.HW4.task1;
-
 import java.math.BigDecimal;
 
 public class GoldenAccount extends Account{
@@ -17,5 +15,11 @@ public class GoldenAccount extends Account{
 		if (newBalance.compareTo(BigDecimal.ZERO) < 0) {
 			throw new IllegalArgumentException("Not enough money");
 		}
+
+        this.balance = newBalance.add(new BigDecimal("150.00"));
+    }
+
+    protected String balanceBuilder() {
+        return "Your golden account balance is " + balance.toString();
     }
 }

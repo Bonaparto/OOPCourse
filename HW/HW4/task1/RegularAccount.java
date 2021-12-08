@@ -1,5 +1,3 @@
-package HW.HW4.task1;
-
 import java.math.BigDecimal;
 
 public class RegularAccount extends Account{
@@ -19,5 +17,9 @@ public class RegularAccount extends Account{
 		}
 
         this.balance = newBalance;
+    }
+
+    protected String balanceBuilder() {
+        return "Your regular account balance is " + balance.toString();
     }
 }

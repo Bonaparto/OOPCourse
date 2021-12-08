@@ -4,9 +4,9 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Game {
-    Map map;
-    ArrayList<Player> players = new ArrayList<>();
-    String turns;
+    private Map map;
+    private Player player;
+    private String turns;
     public static void main(String[] args) {
         Scanner scan = null;
         Map m = null;
@@ -25,7 +25,6 @@ public class Game {
         Game g = new Game(m);
         
         g.addPlayer(p);
-        g.setMap(m);
         
         g.turns = scan.nextLine();
         for(int i = 0; i < g.turns.length(); ++i) {
@@ -35,11 +34,10 @@ public class Game {
             if(g.turns.charAt(i) == 'D') p.moveDown();
         }
 
+        Position playerPosition = p.getPosition();
         System.out.println("Player final position");
-        Position pos = p.getPosition();
-        System.out.println("Row: " + pos.Y);
-        System.out.println("Col: " + pos.X);
-
+        System.out.println("Row: " + playerPosition.getY());
+        System.out.println("Col: " + playerPosition.getX());
     }
 
     public Game(Map m) {
@@ -47,12 +45,10 @@ public class Game {
     }
 
     public void setMap(Map m) {
-        for(Player p: this.players) {
-            p.setMap(m);
-        }
+        player.setMap(m);
     }
 
     public void addPlayer(Player p) {
-        players.add(p);
+        p.setMap(map);
     }
 }

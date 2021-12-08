@@ -1,7 +1,7 @@
 public class Position {
     
-    int X;
-    int Y;
+    protected int X;
+    protected int Y;
 
     public Position(int X, int Y) {
         this.X = X;
@@ -28,10 +28,8 @@ public class Position {
         return p.X == this.X && p.Y == this.Y;
     }
 
-    //TODO
-    // public String toString() {
-
-    // }
-
+    public String toString() {
+        return "(" + X + "," + Y + ")";
+    }
 
 }

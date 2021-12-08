@@ -2,36 +2,38 @@ import java.util.Scanner;
 
 public class Map {
     
-    int X;
-    int Y;
-    int size;
-    char map[][];
+    protected int X;
+    protected int Y;
+    private int size;
+    private char map[][];
 
     public Map(Scanner scan) throws InvalidMapException{
         try{
             size = scan.nextInt();
             map = new char[size][size];
 
-            if(size == 0) throw new InvalidMapException(1);           
+            if(size == 0) throw new InvalidMapException("Map size cannot be zero");           
             scan.nextLine();
 
             for(int i = 0; i < size; ++i) {
 
                 String s = null;
                 if(scan.hasNextLine()) s = scan.nextLine();
-                else throw new InvalidMapException(2);
+                else throw new InvalidMapException("Not enough map elements");
+
+                // if(i == size - 1 && !scan.hasNextLine())  throw new InvalidMapException("Not enough map elements");
                 
                 for(int j = 0; j < s.length(); j += 2) {
                     char c = s.charAt(j);
                     map[i][j / 2] = c;
                     if(c == 'P') {
-                        Y = i;
                         X = j / 2;
+                        Y = i;
                     }
                 }
             }
         } catch(InvalidMapException ex) {
-            System.exit(1);
+            System.out.println(ex.getMessage());
         }
     }
 
@@ -52,3 +54,4 @@ public class Map {
         }
     }
 }
+

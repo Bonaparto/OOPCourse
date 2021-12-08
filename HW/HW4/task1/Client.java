@@ -1,5 +1,3 @@
-package HW.HW4.task1;
-
 public class Client {
     private String name;
     private String phone;

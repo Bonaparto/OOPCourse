@@ -1,5 +1,3 @@
-package HW.HW4.task1;
-
 import java.math.BigDecimal;
 
 public class PremiumAccount extends Account{
@@ -19,5 +17,9 @@ public class PremiumAccount extends Account{
 		}
 
 		this.balance = newBalance.add(new BigDecimal("100.00"));
+    }
+
+    protected String balanceBuilder() {
+        return "Your premium account balance is " + balance.toString();
     }
 }

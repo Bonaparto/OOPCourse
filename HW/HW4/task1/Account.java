@@ -1,5 +1,3 @@
-package HW.HW4.task1;
-
 import java.math.BigDecimal;
 
 public abstract class Account {
@@ -20,7 +18,12 @@ public abstract class Account {
     Client getOwner() {
         return new Client(ownerName.getName(), ownerName.getPhone(), ownerName.getID());
     }
+
+    String getBalance() {
+        return balanceBuilder();
+    }
     
+    protected abstract String balanceBuilder();
     public abstract void credit(BigDecimal balance);
     public abstract void debit(BigDecimal balance);
 }

@@ -1,5 +1,3 @@
-package HW.HW4.task2;
-
 public class CapitalCities <K, V> {
     public K country;
     public V capital;
